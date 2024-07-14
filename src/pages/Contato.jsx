@@ -1,4 +1,4 @@
-import { Accordion, Container, Button, Alert } from "react-bootstrap"
+import { Accordion, Container, Alert } from "react-bootstrap"
 
 function Contato() {
     return (

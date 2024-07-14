@@ -13,9 +13,9 @@ function Home() {
                 id="controlled-tab-example"
                 activeKey={key}
                 onSelect={(k) => setKey(k)}
-                className="mb-3 d-flex justify-content-center"
+                className="mb-3"
                 >
-                <Tab eventKey="0" title="Açaí com Banana" className="d-flex justify-content-center">
+                <Tab eventKey="0" title="Açaí com Banana">
                     <Card style={{ width: '18rem' }}>
                         <Card.Img variant="top" src="https://acaimadruga.com.br/wp-content/uploads/elementor/thumbs/WhatsApp-Image-2023-12-08-at-09.47.26-qgid95pg4tig8enq1hl5xtnngrhvkdejb6xwelpsk0.jpeg" />
                         <Card.Body>
