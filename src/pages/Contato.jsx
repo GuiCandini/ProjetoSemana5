@@ -1,6 +1,15 @@
-import { Accordion, Container, Alert } from "react-bootstrap"
+import { Accordion, Container, Alert } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+import { useForm } from "react-hook-form";
 
 function Contato() {
+
+    const {register, handleSubmit, formState: {errors}} = useForm();
+
+    function cadastrar(data) {
+        console.log(data);
+    }
+
     return (
         <main className="mt-2">
             <Container fluid>
@@ -35,6 +44,43 @@ function Contato() {
                     </Accordion.Item>
                 </Accordion>
             </Container>
+            <form className="form-section" onSubmit={handleSubmit(cadastrar)}>
+                <h3>Entre em contato</h3>
+                <hr />
+                <div>
+                    <label htmlFor="nome">Nome</label>
+                    <input 
+                        type="text"
+                        id="nome"
+                        className="form-control"
+                        placeholder="Insira seu nome"
+                        {...register("nome", {required: true, maxLength:150})}
+                    />
+                    {errors.nome && <small className="invalid">O nome é inválido!</small>}
+                </div>
+                <div>
+                    <label htmlFor="email">Email</label>
+                    <input 
+                        type="email"
+                        id="email"
+                        className="form-control"
+                        placeholder="Insira seu email"
+                        {...register("email", {required: true})}
+                    />
+                    {errors.email && <small className="invalid">O email é inválido!</small>}
+                </div>
+                <div>
+                    <label htmlFor="feedback">Feedback</label>
+                    <textarea 
+                        id="feedback"
+                        className="form-control mb-2"
+                        placeholder="Dê sua opinião"></textarea>
+                    {errors.senha && <small className="invalid">A senha é inválida!</small>}
+                </div>
+                <Button variant="secondary" className="mt-1 w-100" type="submit">
+                    Enviar feedback
+                </Button>
+            </form>
         </main>
     );
 }

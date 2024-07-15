@@ -34,7 +34,7 @@ function Login() {
                     />
                     {errors.senha && <small className="invalid">{errors.senha.message}</small>}
                 </div>
-                <Button variant="secondary" className="mt-1 w-100" type="submit">
+                <Button variant="secondary" className="mt-3 w-100" type="submit">
                     Entrar
                 </Button>
             </form>

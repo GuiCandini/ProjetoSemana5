@@ -35,6 +35,16 @@ function Cadastro() {
                     {errors.email && <small className="invalid">O email é inválido!</small>}
                 </div>
                 <div>
+                    <label htmlFor="dataNascimento">Data de Nascimento</label>
+                    <input 
+                        type="date" 
+                        id="dataNascimento" 
+                        className="form-control" 
+                        {...register("dataNascimento", { required: true })}
+                        />
+                        {errors.dataNascimento && <small className="invalid">Data de nascimento obrigatória!</small>}
+                </div>
+                <div>
                     <label htmlFor="senha">Senha</label>
                     <input 
                         type="password"
